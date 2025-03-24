@@ -12,7 +12,9 @@ def main():
     cell1 = Cell(win)
     cell1.has_top_wall = False
     cell.draw(50, 50, 100, 100)
-    cell1.draw(25, 100, 100, 150)
+    cell1.draw(200, 100, 300, 300)
+
+    cell.draw_move(cell1, undo=True)
     win.wait_for_close()
 
 

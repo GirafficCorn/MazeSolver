@@ -48,5 +48,13 @@ class Cell:
         to_x = ((to_cell._x1 + to_cell._x2) / 2)
         to_y = ((to_cell._y1 + to_cell._y2) / 2)
 
+        line = Line(Point(from_x, from_y), Point(to_x, to_y))
+        color = None
+        if undo == False:
+            color = "grey"
+        else:
+            color = "red"
+        self._win.draw_line(line, color)
+
 
 
