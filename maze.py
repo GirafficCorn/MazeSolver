@@ -1,5 +1,4 @@
 from cell import Cell
-from window import Window
 import time
 
 class Maze:
@@ -37,9 +36,3 @@ class Maze:
         self._win.redraw()
         time.sleep(.05)
 
-
-win = Window(800, 600)
-test = Maze(100, 100, 10, 10, 50, 50, win)
-
-cells = test._create_cells()
-for i in cells: print(i)
