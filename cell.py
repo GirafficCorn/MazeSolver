@@ -19,26 +19,34 @@ class Cell:
         self._y1 = y1
         self._y2 = y2
         if self.has_left_wall:
-            top_left = Point(self._x1, self._y1)
-            bottom_left = Point(self._x1, self._y2)
+            top_left = Point(x1, y1)
+            bottom_left = Point(x1, y2)
             wall = Line(top_left, bottom_left)
-            self._win.draw_line(wall, fill_color="red")
+            self._win.draw_line(wall)
 
         if self.has_right_wall:
-            top_right = Point(self._x2, self._y1)
-            bottom_right = Point(self._x2, self._y2)
+            top_right = Point(x2, y1)
+            bottom_right = Point(x2, y2)
             wall = Line(top_right, bottom_right)
-            self._win.draw_line(wall, fill_color="red")
+            self._win.draw_line(wall)
 
         if self.has_top_wall:
-            top_left = Point(self._x1, self._y1)
-            top_right = Point(self._x2, self._y1)
+            top_left = Point(x1, y1)
+            top_right = Point(x2, y1)
             wall = Line(top_left, top_right)
-            self._win.draw_line(wall, fill_color="red")
+            self._win.draw_line(wall)
 
         if self.has_bottom_wall:
-            bottom_left = Point(self._x1, self._y2)
-            bottom_right = Point(self._x2, self._y2)
+            bottom_left = Point(x1, y2)
+            bottom_right = Point(x2, y2)
             wall = Line(bottom_left, bottom_right)
-            self._win.draw_line(wall, fill_color="red")
+            self._win.draw_line(wall)
+
+    def draw_move(self, to_cell, undo=False):
+        from_x = ((self._x1 + self._x2) / 2)
+        from_y = ((self._y1 + self._y2) / 2)
+        to_x = ((to_cell._x1 + to_cell._x2) / 2)
+        to_y = ((to_cell._y1 + to_cell._y2) / 2)
+
+
 

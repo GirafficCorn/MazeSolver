@@ -1,5 +1,4 @@
 from window import Window
-from line import Line, Point
 from cell import Cell
 
 
@@ -8,8 +7,12 @@ from cell import Cell
 
 def main():
     win = Window(800, 600)
-    cell = Cell(50, 150, 50, 150, win)
-    cell.draw()
+    cell = Cell(win)
+    cell.has_bottom_wall = False
+    cell1 = Cell(win)
+    cell1.has_top_wall = False
+    cell.draw(50, 50, 100, 100)
+    cell1.draw(25, 100, 100, 150)
     win.wait_for_close()
 
 
