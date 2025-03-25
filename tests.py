@@ -28,6 +28,13 @@ class Tests(unittest.TestCase):
         m1 = Maze(10, 10, nums_rows, num_cols, 10, 10, win)
         self.assertEqual(m1._cells[0][0].has_top_wall, False)
 
+    def test_reset_cells_visited(self):
+        win = Window(800, 600)
+        num_cols = 10
+        num_rows = 10
+        m1 = Maze(10, 10, num_rows, num_cols, 10, 10, win)
+        self.assertEqual(m1._cells[0][0].visited, False)
+
 
 if __name__ == "__main__":
     unittest.main()
