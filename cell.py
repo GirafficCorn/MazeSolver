@@ -55,7 +55,7 @@ class Cell:
         line = Line(Point(from_x, from_y), Point(to_x, to_y))
         color = None
         if undo == False:
-            color = "grey"
+            color = "green"
         else:
             color = "red"
         self._win.draw_line(line, color)
